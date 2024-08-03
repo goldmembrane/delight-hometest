@@ -1,19 +1,15 @@
 import styled from 'styled-components'
-import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone'
+import bell from '../../../public/img/bell.svg'
 
 const ImageBox = styled.div`
-    width: 24px;
+    width: 22px;
     height: 24px;
-    color: #595959;
+    background-image: url(${bell});
 `
 
 /** Alarm Icon을 렌더링하는 component */
 const Alarm = () => {
-    return (
-        <ImageBox>
-            <NotificationsNoneIcon />
-        </ImageBox>
-    )
+    return <ImageBox />
 }
 
 export default Alarm

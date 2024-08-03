@@ -1,10 +1,17 @@
+import styled from 'styled-components'
 import Header from '../Header'
+import MainArea from '../Main'
+
+const HomeContainerBox = styled.div`
+    padding: 28px;
+`
 
 const Home = () => {
     return (
-        <div>
+        <HomeContainerBox>
             <Header />
-        </div>
+            <MainArea />
+        </HomeContainerBox>
     )
 }
 

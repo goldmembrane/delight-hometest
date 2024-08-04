@@ -1,0 +1,42 @@
+import styled from 'styled-components'
+
+const SelectorContainer = styled.div`
+    display: flex;
+    margin-top: 30px;
+    align-items: center;
+`
+
+const SelectorButton = styled.div`
+    font-weight: 600;
+    font-size: 16px;
+    color: ${(props) => (props.selected ? '#363062' : '#BDBDBD')};
+    margin-right: 10px;
+    cursor: pointer;
+`
+/** Transaction 영역에 나타나는 목록의 유형을 toggle 하는 component */
+const Selector = ({ setSelcted, selected }) => {
+    return (
+        <SelectorContainer>
+            <SelectorButton
+                onClick={() => setSelcted('all')}
+                selected={selected === 'all'}
+            >
+                All
+            </SelectorButton>
+            <SelectorButton
+                onClick={() => setSelcted('expense')}
+                selected={selected === 'expense'}
+            >
+                Expense
+            </SelectorButton>
+            <SelectorButton
+                onClick={() => setSelcted('income')}
+                selected={selected === 'income'}
+            >
+                Income
+            </SelectorButton>
+        </SelectorContainer>
+    )
+}
+
+export default Selector

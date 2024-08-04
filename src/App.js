@@ -1,9 +1,12 @@
+import { RecoilRoot } from 'recoil'
+import Home from './components/Home'
 
-
-const App = ()  => {
-  return (
-    <div>메인</div>
-  );
+const App = () => {
+    return (
+        <RecoilRoot>
+            <Home />
+        </RecoilRoot>
+    )
 }
 
-export default App;
+export default App

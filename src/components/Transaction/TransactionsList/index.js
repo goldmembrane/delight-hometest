@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { formatTime } from '../../../util/util'
 
 const ListBox = styled.div`
     display: flex;
@@ -42,28 +43,30 @@ const ListPrice = styled.div`
     font-weight: 700;
     font-size: 16px;
     color: #363062;
+    text-align: right;
 `
 
 const ListTime = styled.div`
     font-weight: 400;
     font-size: 14px;
     color: #6b6b6b;
+    text-align: right;
 `
 
-const List = () => {
+const List = ({ data }) => {
     return (
         <ListBox>
             <ListImage />
 
             <ListContentBox>
                 <ListContent>
-                    <ListName>Name</ListName>
-                    <ListSemiName>Transfer</ListSemiName>
+                    <ListName>{data.name}</ListName>
+                    <ListSemiName>{data.type}</ListSemiName>
                 </ListContent>
 
                 <ListContent>
-                    <ListPrice>-$432.9</ListPrice>
-                    <ListTime>3.30 AM</ListTime>
+                    <ListPrice>{data.amount}</ListPrice>
+                    <ListTime>{formatTime(data.timestamp)}</ListTime>
                 </ListContent>
             </ListContentBox>
         </ListBox>

@@ -35,7 +35,6 @@ const RenderWeekIncomeChart = ({ type }) => {
                     <stop offset="95%" stopColor="#363062" stopOpacity={0} />
                 </linearGradient>
             </defs>
-            <Tooltip />
             <Area
                 type="monotone"
                 dataKey="amount"
@@ -65,7 +64,6 @@ const RenderWeekExpenseChart = ({ type }) => {
                     <stop offset="95%" stopColor="#5BDAA4" stopOpacity={0} />
                 </linearGradient>
             </defs>
-            <Tooltip />
             <Area
                 type="monotone"
                 dataKey="amount"

@@ -18,17 +18,26 @@ const BottomNavigationBar = styled.div`
 `
 
 const MenuBox = styled.div`
-    width: 22px;
+    width: 25px;
     height: 24px;
     background-image: url(${menu});
     cursor: pointer;
 `
 
 const CardBox = styled.div`
-    width: 22px;
+    width: 25px;
     height: 24px;
     background-image: url(${card});
     cursor: pointer;
+`
+
+const SelectedArea = styled.div`
+    width: 25px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 `
 
 const ChartBox = styled.div`
@@ -36,10 +45,18 @@ const ChartBox = styled.div`
     height: 24px;
     background-image: url(${chartSelected});
     cursor: pointer;
+    margin-bottom: 15px;
+`
+
+const ActivatedBar = styled.div`
+    width: 25px;
+    height: 5px;
+    background-color: #363062;
+    border-radius: 4px 4px 0px 0px;
 `
 
 const UserBox = styled.div`
-    width: 22px;
+    width: 25px;
     height: 24px;
     background-image: url(${user});
     cursor: pointer;
@@ -50,7 +67,11 @@ const BottomNavigation = () => {
         <BottomNavigationBar>
             <MenuBox />
             <CardBox />
-            <ChartBox />
+            <SelectedArea>
+                <div></div>
+                <ChartBox />
+                <ActivatedBar />
+            </SelectedArea>
             <UserBox />
         </BottomNavigationBar>
     )

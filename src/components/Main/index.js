@@ -13,7 +13,7 @@ const MainArea = () => {
         <MainContainerBox>
             <UnitSelector selected={selected} setSelected={setSelected} />
 
-            <Chart />
+            <Chart unit={selected} />
         </MainContainerBox>
     )
 }

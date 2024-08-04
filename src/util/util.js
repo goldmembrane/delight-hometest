@@ -17,3 +17,19 @@ export const formatTime = (date) => {
         return `${time}.${minute} AM`
     }
 }
+
+export const formatDate = (date, type) => {
+    let dateFormat = new Date(date)
+
+    let month = dateFormat.getMonth() + 1
+    let day = dateFormat.getDate()
+    let year = dateFormat.getFullYear()
+
+    if (type === 'week') {
+        return `${month} ${day}, ${year}`
+    } else if (type === 'month') {
+        return `${month - 1} ${day} - ${month} ${day}, ${year}`
+    } else {
+        return ''
+    }
+}

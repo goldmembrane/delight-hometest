@@ -1,4 +1,8 @@
+import { useRecoilValue } from 'recoil'
 import styled from 'styled-components'
+
+import { allDataState } from '../../../data/state'
+import { formatDate, limitRecentList } from '../../../util/util'
 
 const SelectUnitArea = styled.div`
     display: flex;
@@ -45,6 +49,8 @@ const DateText = styled.p`
 `
 
 const UnitSelector = ({ selected, setSelected }) => {
+    const allData = useRecoilValue(allDataState)
+    const recentData = limitRecentList(allData, 1)[0]
     return (
         <SelectUnitArea>
             <ToggleBox>
@@ -62,7 +68,7 @@ const UnitSelector = ({ selected, setSelected }) => {
                 </MonthButtonBox>
             </ToggleBox>
 
-            <DateText>MM DD, YYYY</DateText>
+            <DateText>{formatDate(recentData.timestamp, selected)}</DateText>
         </SelectUnitArea>
     )
 }

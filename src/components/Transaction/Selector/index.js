@@ -13,7 +13,7 @@ const SelectorButton = styled.div`
     margin-right: 10px;
     cursor: pointer;
 `
-
+/** Transaction 영역에 나타나는 목록의 유형을 toggle 하는 component */
 const Selector = ({ setSelcted, selected }) => {
     return (
         <SelectorContainer>

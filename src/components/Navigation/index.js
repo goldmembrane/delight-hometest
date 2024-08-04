@@ -44,7 +44,7 @@ const UserBox = styled.div`
     background-image: url(${user});
     cursor: pointer;
 `
-
+/** 하단부 navigation bar를 보여주는 component */
 const BottomNavigation = () => {
     return (
         <BottomNavigationBar>

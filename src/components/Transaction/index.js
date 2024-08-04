@@ -22,7 +22,7 @@ const TransactionContainer = styled.div`
 const ListContainer = styled.div`
     margin-top: 30px;
 `
-
+/** mock data에 담겨있는 transaction 정보를 가져와 list 형태로 보여주는 transaction component */
 const Transaction = () => {
     const allData = useRecoilValue(allDataState)
     const incomes = useRecoilValue(incomeDataState)

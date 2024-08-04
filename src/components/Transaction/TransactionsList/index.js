@@ -52,7 +52,7 @@ const ListTime = styled.div`
     color: #6b6b6b;
     text-align: right;
 `
-
+/** mock data에 담겨있는 정보를 가져와 보여주는 list component */
 const List = ({ data }) => {
     return (
         <ListBox>

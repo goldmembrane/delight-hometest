@@ -48,6 +48,7 @@ const DateText = styled.p`
     color: #363062;
 `
 
+/** 보여줄 차트 단위를 주 or 달 단위로 toggle 하는 component */
 const UnitSelector = ({ selected, setSelected }) => {
     const allData = useRecoilValue(allDataState)
     const recentData = limitRecentList(allData, 1)[0]

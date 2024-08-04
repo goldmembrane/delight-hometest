@@ -10,6 +10,7 @@ const HomeContainerBox = styled.div`
     height: 82.5%;
 `
 
+/** 전체 화면 Home을 렌더링하는 Component */
 const Home = () => {
     return (
         <>

@@ -20,6 +20,7 @@ const ChartContainer = styled.div`
     left: 0;
 `
 
+/** mock data중 income data를 주 or 달 단위에 맞게 chart로 보여주는 component */
 const RenderWeekIncomeChart = ({ type }) => {
     const incomeData = useRecoilValue(incomeDataState)
     const weekIncome =
@@ -45,6 +46,7 @@ const RenderWeekIncomeChart = ({ type }) => {
     )
 }
 
+/** mock data중 expense data를 주 or 달 단위에 맞게 chart로 보여주는 component */
 const RenderWeekExpenseChart = ({ type }) => {
     const expenseData = useRecoilValue(expenseDataState)
     const weekExpense =

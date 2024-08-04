@@ -6,6 +6,7 @@ const SemiTitle = styled.div`
     color: #000;
 `
 
+/** Transaction 영역의 title을 보여주는 component */
 const Title = () => {
     return <SemiTitle>Recent Transactions</SemiTitle>
 }

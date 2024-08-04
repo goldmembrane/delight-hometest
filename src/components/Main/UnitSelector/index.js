@@ -1,4 +1,8 @@
+import { useRecoilValue } from 'recoil'
 import styled from 'styled-components'
+
+import { allDataState } from '../../../data/state'
+import { formatDate, limitRecentList } from '../../../util/util'
 
 const SelectUnitArea = styled.div`
     display: flex;
@@ -7,7 +11,7 @@ const SelectUnitArea = styled.div`
 `
 
 const ToggleBox = styled.div`
-    width: 50%;
+    width: 60%;
     border-radius: 20px;
     background-color: #f5f5f5;
     height: 34px;
@@ -15,25 +19,27 @@ const ToggleBox = styled.div`
 `
 
 const WeekButtonBox = styled.div`
-    width: 50%;
+    width: 45%;
     padding: 5px 17px;
-    background-color: #363062;
+    background-color: ${(props) => (props.selected ? '#363062' : 'f5f5f5')};
     border-radius: 20px;
     cursor: pointer;
     font-weight: 600;
     font-size: 16px;
-    color: #fff;
+    color: ${(props) => (props.selected ? '#fff' : '6b6b6b')};
+    text-align: center;
 `
 
 const MonthButtonBox = styled.div`
-    width: 50%;
+    width: 45%;
     padding: 5px 17px;
-    background-color: #f5f5f5;
+    background-color: ${(props) => (props.selected ? '#363062' : 'f5f5f5')};
     border-radius: 20px;
     cursor: pointer;
     font-weight: 600;
     font-size: 16px;
-    color: #6b6b6b;
+    color: ${(props) => (props.selected ? '#fff' : '6b6b6b')};
+    text-align: center;
 `
 
 const DateText = styled.p`
@@ -42,15 +48,27 @@ const DateText = styled.p`
     color: #363062;
 `
 
-const UnitSelector = () => {
+const UnitSelector = ({ selected, setSelected }) => {
+    const allData = useRecoilValue(allDataState)
+    const recentData = limitRecentList(allData, 1)[0]
     return (
         <SelectUnitArea>
             <ToggleBox>
-                <WeekButtonBox>Week</WeekButtonBox>
-                <MonthButtonBox>Month</MonthButtonBox>
+                <WeekButtonBox
+                    onClick={() => setSelected('week')}
+                    selected={selected === 'week'}
+                >
+                    Week
+                </WeekButtonBox>
+                <MonthButtonBox
+                    onClick={() => setSelected('month')}
+                    selected={selected === 'month'}
+                >
+                    Month
+                </MonthButtonBox>
             </ToggleBox>
 
-            <DateText>MM DD, YYYY</DateText>
+            <DateText>{formatDate(recentData.timestamp, selected)}</DateText>
         </SelectUnitArea>
     )
 }
